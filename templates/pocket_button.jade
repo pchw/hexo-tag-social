@@ -1,0 +1,14 @@
+#hexo-pocket-btn
+script#hexo-pocket-btn-tmpl(type="text/html")
+  a(
+    data-pocket-label="pocket"
+    data-save-url="{{url}}"
+    data-pocket-count="vertical"
+    class="pocket-btn"
+    data-lang="en")
+script(type="text/javascript").
+  $(function(){
+    var html = $('#hexo-pocket-btn-tmpl').html();
+    html = html.replace('{{url}}', location.href);
+    $('#hexo-pocket-btn').append(html)
+  });

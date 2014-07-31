@@ -1,0 +1,26 @@
+#hexo-hb-btn
+script#hexo-hb-btn-tmpl(type="text/html")
+  a.hatena-bookmark-button(
+    href='http://b.hatena.ne.jp/entry/{{url}}'
+    data-hatena-bookmark-title='#{title}'
+    data-hatena-bookmark-layout='#{display_type}'
+    data-hatena-bookmark-lang='#{lang}'
+    title='このエントリーをはてなブックマークに追加')
+    img(
+      src='http://b.st-hatena.com/images/entry-button/button-only@2x.png'
+      alt='このエントリーをはてなブックマークに追加'
+      width='20'
+      height='20'
+      style='border: none;')
+  script(
+    type='text/javascript'
+    src='http://b.st-hatena.com/js/bookmark_button.js'
+    charset='utf-8'
+    async='async')
+script(type="text/javascript").
+  $(function(){
+    var html = $('#hexo-hb-btn-tmpl').html();
+    html = html.replace('{{url}}', location.href);
+    $('#hexo-hb-btn').append(html)
+  });
+      

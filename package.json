@@ -10,5 +10,8 @@
     "hexo"
   ],
   "author": "pchw",
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "jade": "^1.5.0"
+  }
 }

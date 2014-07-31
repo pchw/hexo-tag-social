@@ -1,0 +1,23 @@
+#hexo-fb-btn
+script#hexo-fb-btn-tmpl(type="text/html")
+  .fb-like(
+    data-href="{{url}}"
+    data-layout="#{layout}"
+    data-action="#{action}"
+    data-show-faces='false'
+    data-share='false')
+script(type="text/javascript").
+  (function(d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) return;
+    js = d.createElement(s); js.id = id;
+    js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&appId=186238848226594&version=v2.0";
+    fjs.parentNode.insertBefore(js, fjs);
+  }(document, 'script', 'facebook-jssdk'));
+script(type="text/javascript").
+  $(function(){
+    var html = $('#hexo-fb-btn-tmpl').html();
+    html = html.replace('{{url}}', location.href);
+    $('#hexo-fb-btn').append(html)
+  });
+      
