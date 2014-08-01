@@ -5,8 +5,7 @@ script#hexo-fb-btn-tmpl(type="text/html")
     data-layout="#{layout}"
     data-action="#{action}"
     data-show-faces='false'
-    data-share='false'
-    data-hatena-bookmark-title='{{title}}')
+    data-share='false')
 script(type="text/javascript").
   (function(d, s, id) {
     var js, fjs = d.getElementsByTagName(s)[0];
@@ -18,9 +17,7 @@ script(type="text/javascript").
 script(type="text/javascript").
   $(function(){
     var html = $('#hexo-fb-btn-tmpl').html();
-    html = html
-    .replace('{{url}}', location.href)
-    .replace('{{title}}', $('title').text())
+    html = html.replace('{{url}}', location.href);
     $('#hexo-fb-btn').append(html)
   });
       

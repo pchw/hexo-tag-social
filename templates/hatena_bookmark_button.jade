@@ -2,7 +2,7 @@
 script#hexo-hb-btn-tmpl(type="text/html")
   a.hatena-bookmark-button(
     href='http://b.hatena.ne.jp/entry/{{url}}'
-    data-hatena-bookmark-title='#{title}'
+    data-hatena-bookmark-title='{{title}}'
     data-hatena-bookmark-layout='#{display_type}'
     data-hatena-bookmark-lang='#{lang}'
     title='このエントリーをはてなブックマークに追加')
@@ -20,7 +20,9 @@ script#hexo-hb-btn-tmpl(type="text/html")
 script(type="text/javascript").
   $(function(){
     var html = $('#hexo-hb-btn-tmpl').html();
-    html = html.replace('{{url}}', location.href);
+    html = html
+    .replace('{{url}}', location.href)
+    .replace('{{title}}', $('title').text());
     $('#hexo-hb-btn').append(html)
   });
       
