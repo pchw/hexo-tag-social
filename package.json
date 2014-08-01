@@ -1,6 +1,6 @@
 {
   "name": "hexo-social",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "add Hexo tag for generate social button",
   "main": "index.js",
   "scripts": {
